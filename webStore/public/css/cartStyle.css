@@ -1,0 +1,83 @@
+.cart-item-container{
+    box-shadow: 0.3rem 0.5rem 1rem rgb(4, 56, 4);
+    font-size: 3vmin;
+    letter-spacing: 0.4vmin;
+    color:#222831;
+    width: fit-content;
+    padding:1vmin 2vmin;
+    margin-bottom: 3vmin;
+    margin-left: 2vmin;
+    border-radius: 0.5rem;
+}
+
+.cart-item-container ul{
+    padding-left: 1rem;
+    padding-bottom: 3vmin;
+}
+
+.buttons-container{
+    display:grid;
+    grid-template-rows:repeat(2, min-content);
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 2vmin;
+}
+
+.row-1{
+    justify-self: center;
+}
+
+.row-2, .delete-all{
+    grid-column: 1/-1;
+    width: 100%;
+}
+
+.button-style{
+    font-size: 2vmin;
+    font-weight: 500;
+    letter-spacing: 0.4vmin;
+    outline: none;
+    border: 1px solid rgb(47, 58, 47);
+    background: linear-gradient(to right,rgb(146, 180, 146), rgb(140, 189, 140));
+    text-decoration: none;
+    color: black;
+    border-radius: 0.3rem;
+}
+
+.total-items, .total-price{
+    font-size: 3vmin;
+    letter-spacing: 0.4vmin;
+    margin-bottom: 2vmin;
+    color:#222831;
+}
+
+.cart-item-container span{
+    font-weight: 600;
+    color: rgb(126, 58, 58);
+}
+
+.blue:visited{
+    color:rgb(0, 0, 255);
+}
+
+hr{
+    width: 60vmin; 
+}
+
+.order-now{
+    font-size: 3vmin;
+    padding: 1vmin 2vmin;
+    margin-top: 2vmin;
+    border: 1px solid rgb(47, 58, 47);
+    background: linear-gradient(to right,rgb(146, 180, 146), rgb(140, 189, 140));
+    color:rgb(71, 73, 83);
+    letter-spacing: 0.3vmin;
+    border-radius:0.4rem;
+    margin-left: 15vmin;
+    outline: none;
+    box-shadow: 0.3rem 0.5rem 1rem rgba(0, 0, 0, 0.472);
+    transition: transform 0.3s;
+}
+
+.order-now:active{
+    transform: translateY(0.3vmin);
+}

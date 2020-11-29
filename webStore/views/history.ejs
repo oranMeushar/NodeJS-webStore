@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>History-orders</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/public/css/historyStyle.css'>
+</head>
+<body>
+    <%-include('includes/nav.ejs')%>
+    <div class="main-container">
+            <%for(i = 0; i < orders.length; i++){%>
+                <div class="user-order-wrapper order<%=i%>" id="<%=orders[i]%>">
+                    <div class="user-order">                                 
+                        <h1 class="order-header">Order <%=i+1%>) </h1>
+                        <a href="/orders/<%=orders[i]%>" class="details">Details</a>         
+                    </div>
+                    <button class = "delete-order order<%=i%>">Delete</button>
+                </div>    
+            <%}%>              
+    </div>
+    <script src="/public/js/history.js"></script>
+</body>
+</html>

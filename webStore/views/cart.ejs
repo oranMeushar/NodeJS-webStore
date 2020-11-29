@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/public/css/cartStyle.css'>
+</head>
+<body>
+    <%-include('includes/nav.ejs')%>
+
+    <h1 class="total-items">Total Items: <%=totalItems%></h1>
+    <h1 class="total-price">Total Price: <%=price%></h1>
+     
+    <%for(i = 0; i < data.length; i++){%>
+        <div class="cart-item-container">
+            <ul>
+                <li><span>Item:</span><%= data[i].title%>, <span>Amount:</span>(<%=data[i].count%>)</li>
+            </ul>
+
+            <div class="buttons-container">
+                <form class = "add-one row-1" action="/addCart" method="POST">
+                    <input type="hidden" name="id" value = "<%=data[i]._id%>">
+                    <button class= "button-style add-to-cart" type = "submit">Add One</button>                  
+                </form>
+
+                <form class = "delete-one row-1"action="/deleteOne" method="POST">
+                    <input type="hidden" name="id" value = "<%=data[i]._id%>">
+                    <button class= "button-style add-to-cart" type = "submit">Delete One</button>                
+                </form>
+                <form class = "delete-all row-2"action="/deleteAll" method="POST">
+                    <input type="hidden" name="id" value = "<%=data[i]._id%>">
+                    <button class= "button-style delete-all" type = "submit">Delete All</button>
+                  
+                </form>
+            </div>
+            
+        </div>
+    <%}%>
+
+    <%if(data.length != 0){%>
+        <hr>
+        <form action="/orders" method="POST">
+            <button type="submit" class="order-now">Order Now</button>
+        </form>
+    <%}%>
+
+</body>
+</html>

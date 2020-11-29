@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='/public/css/manageProductStyle.css'>
+</head>
+<body>
+    <%-include('includes/nav.ejs')%>
+    <div class="container">
+        <%for(i = 0; i < data.length; i++){%>
+            <div class="card-wrapper">
+                <div class="card">
+                    <h1 class="title"><%=data[i].title%></h1>
+                    <div class="image-wrapper">
+                        <img src="<%=data[i].image%>" alt="<%=data[i].title%>">
+                    </div>
+                    <h2 class="price">$<%=data[i].price%></h2>
+                    <p class="description"><%=data[i].description%></p>
+                    <div class="button-wrapper">
+                        <a class="button-style details" href="/editProduct/<%=data[i]._id%>?edit=true">Edit</a>
+                        <form action="/deleteItem" method="POST">
+                            <input type="hidden" name = "id" value="<%=data[i]._id%>">
+                            <button class= "button-style add-to-cart" type = "submit">Delete</button>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        <%}%>
+    </div>
+</body>
+</html>

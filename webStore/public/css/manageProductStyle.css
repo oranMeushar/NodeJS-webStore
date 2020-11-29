@@ -1,0 +1,112 @@
+.container{
+    padding-top: 10vmin;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 25%);
+    grid-column-gap: 4vmin;
+    grid-row-gap: 4vmin;
+    justify-content: center;
+}
+
+.card-wrapper{
+    align-self: stretch;
+}
+.card{
+    font-size: 3vmin;
+    color:rgb(235, 225, 225);
+    padding:1vmin 2vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0.3rem 0.5rem 1rem black;
+    background-color:#393e46;
+    line-height: 5vmin;
+    text-align: center;
+    color:#a2a2a2;
+}
+
+.card h1{
+    letter-spacing: 0.2vmin;
+    font-family: 'Trirong', serif;
+    text-shadow: 0.3rem 0.5rem 0.5rem rgba(0, 0, 0, 0.335);
+    
+}
+
+.description, .price{
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.2vmin;
+}
+
+.card img{
+    padding: 1rem 0;
+    width:100%;
+    height: 40vmin;
+    object-fit: cover;
+    transition: transform 0.5s linear;
+}
+
+.card img:hover{
+    transform: scale(1.1);
+}
+
+.image-wrapper{
+    overflow: hidden;
+}
+
+.button-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+
+.button-style{
+    font-size: 3vmin;
+    font-weight: 500;
+    letter-spacing: 0.4vmin;
+    outline: none;
+    border: 1px solid rgb(47, 58, 47);
+    background: linear-gradient(to right,rgb(146, 180, 146), rgb(140, 189, 140));
+    box-shadow:0.3rem 0.5rem 1rem rgba(0, 0, 0, 0.493);
+    transition: transform 0.5s;
+    text-decoration: none;
+    color: black;
+    border-radius: 0.6rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.button-style::before{
+    content:"";
+    position: absolute;
+    top:0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left,transparent, rgba(255, 255, 255, 0.822), transparent);
+    transition: left 1s;
+}
+.button-style:hover::before{
+    left: 100%;
+}
+
+.details{
+    display: block;
+    height: 50%;
+    line-height: normal;
+}
+
+.button-style:hover{
+    transform: scale(1.1);
+}
+.button-style:active{
+    transform: translateY(0.3rem);
+}
+
+.blue:visited{
+    color:rgb(0, 0, 255);
+}
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/public/css/adminStyle.css'>
+</head>
+<body>
+    <%-include('includes/nav.ejs')%>
+    <div class="main-container">
+        <div class="button-wrapper">
+            <button class="open-orders">Orders</button>
+        </div>
+
+        <div class="button-wrapper">
+            <button class="users-management">Users <br>Management</button>
+        </div>
+
+        <div class="open-orders-page-main-container">
+            <div class="open-orders-page-sub-container"> 
+                <!-- <div class="user-order-wrapper">
+                    <div class="user-order">                          
+                        <p class="number">1)</p>         
+                        <h1 class="order-header"># a34bdfb4dbfdb43 </h1>
+                        <a href="" class="details">Details</a>         
+                    </div>
+                    <button class = "delete-order">Delete</button>
+                </div>   -->              
+            </div>
+        </div>
+
+
+        <div class="users-management-page-main-container">
+            <div class="users-management-page-sub-container">
+                
+                <div class="user-management-header">
+                    <h2 class="search-text">Search by:</h2>
+                    <div class="radio-warpper">
+                        <label for="name">Name:</label>
+                        <input type="radio" name="search" id="name" value="name">
+                        <label for="email">Email:</label>
+                        <input type="radio" name="search" id="email" value="email">
+                    </div>                      
+                </div>
+
+                <input class = "user-search" type="search" name="search" readonly autocomplete="off">
+
+                <div class="user-management-main">     
+                        <h2>ID</h2>
+                        <h2>NAME</h2>              
+                        <h2>EMAIL</h2>               
+                </div>
+
+                <div class="user-management-main-wrapper">
+                    <!-- <div class="user-management-main-content">
+                        <h3 class = "col-1">1232564568564</h3>
+                        <h3 class = "col-2">oran meushar</h3>              
+                        <h3 class = "col-3">oranmeushar@gmail.com</h3>
+                        <div class="col-4">
+                            <div class="circles-wrapper">
+                                <div class="circle circle1"></div>
+                                <div class="circle circle2"></div>
+                                <div class="circle circle3"></div>
+                            </div>
+                            <div class="circle-options">
+                                <a href="">Orders History</a>
+                                <a href="">Send Email</a>
+                                <a href="">Remove User</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="warnning-alert">
+            <h1>Are you sure you want to <br>delete this user?</h1>
+            <button class="confirm">Confirm</button>
+            <button class="cancle">Cancle</button>
+        </div>
+        
+    </div>
+    <script src='/public/js/admin.js'></script>
+</body>
+</html>

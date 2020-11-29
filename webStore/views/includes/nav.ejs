@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/public/css/navStyle.css'>
+</head>
+<body>
+    <nav class="top-nav-bar">
+        <ul>
+            <li><a href="/" class = "<%-url == '/' ? 'blue' : 'black' %>">Shop</a></li>
+            <li><a href="/products" class = "<%-url == '/products' ? 'blue' : 'black' %>">Products</a></li>
+            
+            <li><%if(isLoggedIn && !isAdmin){%><a href="/cart" class = "<%-url == '/cart' ? 'blue' : 'black' %>">Cart</a><%}%></li>
+            <li><%if(isLoggedIn && !isAdmin){%>
+                <a href="/orders" class = "<%-url == '/orders' ? 'blue' : 'black' %>">Order</a>
+                <%}%>
+                <%if(isLoggedIn && isAdmin){%>
+                    <a href="/admin" class = "<%-url == '/admin' ? 'blue' : 'black' %>">Admin</a>
+                <%}%>
+            </li>
+            <li><%if(isLoggedIn && isAdmin){%><a href="/addProduct" class = "<%-url == '/addProduct' ? 'blue' : 'black' %>">Add Product</a><%}%></li>
+            <li><%if(isLoggedIn && isAdmin){%><a href="/manageProduct" class = "<%-url == '/manageProduct' ? 'blue' : 'black' %>">Manage Product</a><%}%></li>
+            <div class="auth-wrapper">
+                <li class = "right"><a href="<%-isLoggedIn ? '/logout' : '/login' %>" class = "<%-url == '/login' ? 'blue' : 'black' %>"><%- isLoggedIn ? 'Logout' : 'Login'%></a></li>
+                <li class = "right"><%if(!isLoggedIn){%><a href = "/signUp" class = "<%-url == '/signUp' ? 'blue' : 'black' %>">SignUp</a><%}%></li>
+            </div>
+        </ul>
+    </nav>
+</body>
+</html>

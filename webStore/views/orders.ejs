@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/public/css/ordersStyle.css'>
+</head>
+<body>
+    <div class="main-container">
+        <%- include('includes/nav.ejs')%>
+        <%if(order){%>
+            <div class="order-wrapper">
+                <div class="order">
+                    <div class="header-wrapper">      
+                        <h1 class="order-header">
+                            Click<a href="/orders/<%=order.userId%>" class="details">here</a>
+                            for order details
+                        </h1>         
+                            <!-- <h1 class="order-header">Order - <%=order.userId%></h1>
+                            <a href="/orders/<%=order.userId%>" class="details">Details</a> -->
+                    </div>
+                </div>
+                <div class="button-container">
+                    <form action="/deleteOrders" method="POST">
+                        <button type="submit" class="delete-order">Delete Order</button>
+                        <input class="order-id" type="hidden" name="id" value="<%=order._id%>">
+                    </form>
+                    <button class="button-order">Order</button>
+                </div>    
+            </div>                   
+        <%}%>
+
+        <div class="fake-payment-container">
+            <div class="fake-payment-wrapper">
+                <div class="images">
+                    <img src="/public/images/icons8-bank-cards-64.png" alt="card">
+                    <img src="/public/images/icons8-discover-64.png" alt="card">
+                    <img src="/public/images/icons8-mastercard-96.png" alt="card">
+                    <img src="/public/images/icons8-visa-64.png" alt="card">
+                </div>
+                <form action="/payment" class="form" method="POST">
+                    <label for="card-number">Fake card Number:</label>
+                    <input type="text" id="card-number" name="cardNumber">
+                    <label for="name-on-card">Fake name on card:</label>
+                    <input type="text" id="name-on-card" name="nameOnCard">
+                    <div class="exp-data-and-security">
+                        <label for="expiry-date">Fake expiry date:</label>
+                        <input type="month" id="expiry-date" name="expiryDate">
+                        <label for="password">Fake password:</label>
+                        <input type="password" id="password" name="password" maxlength="3" minlength="3">
+                    </div>
+                    <button type="submit" class="pay-now">Pay Now</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+        <div class="success-message">
+            <img src="/public/images/check.png" alt="success">
+            <h1 class="success-message-header">Payment Success!</h1>
+            <h2 class="success-message-sub-header">It is our plessure to offer <br> you our products</h2>
+            
+            <button class="continue">Continue</button>
+        </div>
+        
+        
+    </div>
+    <script src="/public/js/payment.js"></script>
+</body>
+</html>

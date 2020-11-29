@@ -1,0 +1,39 @@
+.user-order-wrapper{
+    display: grid;
+    grid-template-columns: max-content min-content;
+    grid-column-gap: 2vmin;
+    align-items:center;
+  
+}
+.user-order{
+    font-size: 2.5vmin;
+    padding: 1.5vmin;
+    letter-spacing: 0.3vmin;
+    background-color: rgb(211, 231, 248);
+    box-shadow: 0.3rem 0.6rem 1rem black;
+    margin-bottom: 2vmin;
+    border-radius: 0.5rem;
+    margin-top: 3vmin;
+    display: flex;
+    align-items:center;
+}
+
+.details{
+    color:blue;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 2vmin;
+    font-size: 3.5vmin;
+}
+
+.delete-order{
+    font-size: 3vmin;
+    padding: 1vmin 2vmin;
+    background:linear-gradient(to right ,rgb(255, 62, 62), rgb(124, 19, 19),rgb(228, 61, 61));
+    border:2px solid red;
+    color:rgb(182, 174, 174);
+    letter-spacing: 0.3vmin;
+    border-radius:0.4rem;
+    outline: none;
+    box-shadow: 0.3rem 0.5rem 1rem rgba(0, 0, 0, 0.472);
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/public/css/productsDetailStyle.css'>
+</head>
+<body>
+    <%-include('includes/nav.ejs')%>
+    <div class="top-container">
+        <div class="image-left">
+            <img src="/<%=item.image%>" alt="<%=item.title%>">
+        </div>
+        <div class="details-right">
+            <h2><span>Item:</span><%=item.title%></h2>
+            <h2><span>Price:</span><%=item.price%>$</h2>
+            <h2><span>Description:</span><%=item.description%></h2>
+            <h2><span>Brand:</span>Lorem, ipsum</h2>
+            <div class="about-wrapper">
+                <h2><span>About This Item:</span></h2>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="bottom-container">
+        <%for(i = 0; i < randomImg.length; i++){%>
+            <div class="img-wrapper">
+                <img src="/<%=randomImg[i].image%>" alt="<%=randomImg[i].title%>">
+            </div>
+        <%}%>
+    </div>
+    <a class="button-style details" href="/">Check Out More</a>
+</body>
+</html>

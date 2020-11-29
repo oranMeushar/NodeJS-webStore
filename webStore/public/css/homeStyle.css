@@ -1,0 +1,92 @@
+
+.container{
+    padding-top: 10vmin;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,  25%);
+    grid-column-gap: 4vmin;
+    grid-row-gap: 4vmin;
+    justify-content: center;
+}
+
+.card{
+    font-size: 3vmin;
+    padding:1vmin 2vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0.3rem 0.5rem 1rem black;
+    background-color:#393e46;
+    line-height: 5vmin;
+    color:#a2a2a2;
+    text-align: center;
+    
+}
+
+.card h1{
+    letter-spacing: 0.2vmin;
+    font-family: 'Trirong', serif;
+    text-shadow: 0.3rem 0.5rem 0.5rem rgba(0, 0, 0, 0.335);
+    
+}
+
+.description, .price{
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.2vmin;
+}
+
+.card img{
+    padding: 1rem 0;
+    width:100%;
+    height: 40vmin;
+    object-fit: cover;
+    transition: transform 0.5s linear;
+}
+
+.card img:hover{
+    transform: scale(1.1);
+}
+
+.image-wrapper{
+    overflow: hidden;
+}
+
+.button-style{
+    font-size: 3vmin;
+    font-weight: 500;
+    letter-spacing: 0.4vmin;
+    outline: none;
+    background: linear-gradient(to right,rgb(146, 180, 146), rgb(140, 189, 140));
+    box-shadow:0.3rem 0.5rem 1rem rgba(0, 0, 0, 0.493);
+    transition: transform 0.5s;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    overflow: hidden;
+    border-radius:0.6rem;
+    transform:perspective(50rem) rotateY(20deg);
+}
+
+.button-style::before{
+    content:"";
+    position: absolute;
+    top:0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left,transparent, rgba(255, 255, 255, 0.822), transparent);
+    transition: left 1s;
+}
+.button-style:hover::before{
+    left: 100%;
+}
+
+.button-style:hover{
+    transform: scale(1.1);
+}
+.button-style:active{
+    transform: translateY(0.3rem)
+}
+
+.blue:visited{
+    color:rgb(0, 0, 255);
+}
